@@ -1,0 +1,21 @@
+{
+  "name": "shoper-apps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "export ENV_FILE=/home/ar4s/work/shoper-apps/.env && pnpm run -r --parallel dev",
+    "build": "pnpm run -r build ",
+    "build:counter": "pnpm run --filter 'counter-common' --filter 'counter-api...' -r build",
+    "generate": "npx prisma generate --schema=./packages/telegram-common/prisma/schema.prisma",
+    "makemigrations": "npx prisma migrate dev --schema=./packages/telegram-common/prisma/schema.prisma",
+    "push": "npx prisma db push --schema=./packages/telegram-common/prisma/schema.prisma",
+    "start:ui": "pnpm run --filter telegram-ui start",
+    "start:api": "pnpm run --filter telegram-api start",
+    "start:worker": "pnpm run --filter telegram-worker start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

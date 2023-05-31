@@ -1,0 +1,13 @@
+query GetBanners($shopId: ID!) {
+  banners(shopId: $shopId) {
+    id
+    name
+    alternativeText
+    enabled
+    createdAt
+    updatedAt
+    images {
+      id
+    }
+  }
+}

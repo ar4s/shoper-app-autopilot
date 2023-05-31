@@ -1,0 +1,6 @@
+query GetBanner($id: ID!) {
+  banner(id: $id) {
+    name
+    alternativeText
+  }
+}

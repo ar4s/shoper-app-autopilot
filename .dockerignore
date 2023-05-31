@@ -1,0 +1,12 @@
+.dockerignore
+.env
+.git
+**/.env
+**/.env
+**/.git
+**/.next
+**/dist
+**/node_modules
+Dockerfile
+Dockerfile.counter-api
+node_modules

@@ -1,0 +1,7 @@
+mutation CreateBanner($shopId: ID!, $name: String!, $alternativeText: String!) {
+  createBanner(shopId: $shopId, data: { name: $name, alternativeText: $alternativeText}) {
+    id
+    alternativeText
+    name
+  }
+}

@@ -1,0 +1,8 @@
+query GetTasks($shopId: ID!) {
+  tasks(shopId: $shopId) {
+    id
+    draft
+    enabled
+
+  }
+}

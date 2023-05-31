@@ -1,0 +1,3 @@
+mutation UploadBannerImage($id: ID!, $image: Upload!) {
+  uploadBannerImage(data: {id: $id, image: $image})
+}

@@ -1,0 +1,4 @@
+mutation RemoveBanner($bannerId: ID!) {
+  removeBanner(bannerId: $bannerId)
+}
+
