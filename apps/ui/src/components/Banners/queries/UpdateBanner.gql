@@ -1,0 +1,10 @@
+mutation UpdateBanner($id: ID!, $name: String!, $alternativeText: String!, $width: Int!, $height: Int!) {
+  updateBanner(data: {id: $id, name: $name, alternativeText: $alternativeText}) {
+    id
+    name
+    alternativeText
+    updatedAt
+    width
+    height
+  }
+}

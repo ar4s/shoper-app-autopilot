@@ -1,0 +1,16 @@
+query GetBannerImages($id: ID!) {
+  banner(id: $id) {
+    id
+    name
+    images {
+      id
+      width
+      height
+      type
+      totalBytes
+      path
+      isOriginal
+      # url
+    }
+  }
+}

@@ -1,0 +1,89 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""An Image of banner"""
+type BannerImage {
+  id: ID!
+  width: Int!
+  height: Int!
+  type: String!
+  totalBytes: Int!
+  path: String!
+  isOriginal: Boolean!
+  bucket: String!
+  url: String!
+}
+
+"""A banner"""
+type Banner {
+  id: ID!
+  enabled: Boolean!
+  name: String!
+  alternativeText: String!
+  width: Int!
+  height: Int!
+  images: [BannerImage!]
+  createdAt: Timestamp!
+  updatedAt: Timestamp!
+  foo: String!
+}
+
+"""
+`Date` type as integer. Type represents date and time as number of milliseconds from start of UNIX epoch.
+"""
+scalar Timestamp
+
+type Foo {
+  bar: String!
+}
+
+"""Generic task"""
+type Task {
+  id: ID!
+  enabled: Boolean!
+  draft: Boolean!
+  payload: JSON!
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+type Query {
+  tasks(shopId: ID!): [Task!]!
+  banner(id: ID!): Banner!
+  banners(shopId: ID!): [Banner!]!
+  aaa: Foo!
+}
+
+type Mutation {
+  createTaskBannerShow(shopId: ID!, bannerId: ID!, triggerAt: Timestamp!): Task!
+  createTaskBannerHide(shopId: ID!, bannerId: ID!, triggerAt: Timestamp!): Task!
+  createTaskProductEnableProductOfTheDay(shopId: ID!, productId: ID!, triggerAt: Timestamp!): Task!
+  createTaskProductDisableProductOfTheDay(shopId: ID!, productId: ID!, triggerAt: Timestamp!): Task!
+  updateBanner(data: UpdateBannerInput!): Banner!
+  createBanner(shopId: ID!, data: CreateBannerInput!): Banner!
+  removeBanner(bannerId: ID!): String!
+  uploadBannerImage(data: UploadInput!): Boolean!
+}
+
+input UpdateBannerInput {
+  id: ID!
+  name: String!
+  alternativeText: String!
+}
+
+input CreateBannerInput {
+  name: String!
+  alternativeText: String!
+}
+
+input UploadInput {
+  id: ID!
+  image: Upload!
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
